@@ -11,5 +11,5 @@ else if(hour < 17){
     console.log('Afternoon Time');
 }
 else{
-    //Night
+    console.log('Night Time');
 }
