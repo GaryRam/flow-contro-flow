@@ -3,14 +3,24 @@ let hour = d.getHours();
 
 console.log(hour);
 
+let greetingText = document.getElementById("greeting-text")
 
 if(hour < 12){
-    console.log('Morning Time');
+    greetingText.textContent = "Good Morning!";
+    document.querySelector(".night").classList.add("d-none");
+    document.querySelector(".afternoon").classList.add("d-none");
 }
 else if(hour < 17){
-    console.log('Afternoon Time');
+    greetingText.textContent = "Good Afternoon!";
+    document.getElementsByTagName("body")[0].classList.add("noon-bg");
+    greetingText.parentElement.classList.add("noon-gradient");
+    document.querySelector(".morning").classList.add("d-none");
+    document.querySelector(".night").classList.add("d-none");
 }
 else{
-    console.log('Night Time');
+    greetingText.textContent = "Good Night!";
+    greetingText.parentElement.classList.add("night-gradient");
+    document.querySelector(".morning").classList.add("d-none");
+    document.querySelector(".afternoon").classList.add("d-none");
 }
 
